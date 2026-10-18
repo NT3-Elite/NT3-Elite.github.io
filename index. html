@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Saytim</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            max-width: 600px;
+        }
+        h1 { font-size: 2.5em; margin-bottom: 15px; }
+        p { font-size: 1.2em; margin-bottom: 25px; opacity: 0.9; }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            color: #764ba2;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .btn:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Salom, dunyo! 👋</h1>
+        <p>Bu mening birinchi saytim. GitHub Pages yordamida bepul yaratildi!</p>
+        <a href="#" class="btn">Batafsil</a>
+    </div>
+</body>
+</html>
