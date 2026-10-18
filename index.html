@@ -1,107 +1,11 @@
-<!DOCTYPE html><!DOCTYPE html>
-<html lang="uz">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NT3 - Mening Anime Kolleksiyam</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-body{background:#000;color:#fff}
-.masonry{column-count:2;column-gap:8px}
-.pin{break-inside:avoid;margin-bottom:8px;border-radius:18px;overflow:hidden;background:#111}
-</style>
-</head>
-<body>
+// Telegram - bitta kod
+t.me/s/kanal_nomi
 
-<div class="flex justify-between p-4 bg-black sticky top-0 border-b border-zinc-900">
-  <h1 class="font-black">NT3 PRIVATE</h1>
-  <button onclick="openAdmin()" class="bg-zinc-800 text-xs px-3 py-1.5 rounded-full">ADMIN</button>
-</div>
+// Instagram - bitta kod  
+graph.instagram.com/me/media?access_token=TOKEN
 
-<div id="empty" class="text-center py-20">
-  <p class="text-6xl">🎴</p>
-  <p class="font-bold mt-4">Hali rasm yo'q</p>
-  <p class="text-sm text-zinc-500">ADMIN bosib o'z rasmlaringni yukla</p>
-</div>
+// Senin rasmlaring
+localStorage da saqlanadi, faqat sen ko'ra olasan
 
-<div id="grid" class="p-2 masonry"></div>
-
-<div id="musicBar" class="fixed bottom-0 left-0 right-0 p-3 bg-zinc-900 border-t border-zinc-800 hidden">
-  <div class="flex gap-3 items-center">
-    <button onclick="toggleMusic()" id="playBtn" class="bg-white text-black w-10 h-10 rounded-full">▶</button>
-    <p id="musicName" class="text-sm truncate">Musiqa</p>
-    <audio id="audio" class="hidden"></audio>
-  </div>
-</div>
-
-<div id="adminPanel" class="fixed inset-0 bg-black z-50 hidden p-4 overflow-auto">
-  <div class="flex justify-between mb-6">
-    <h2 class="font-black text-2xl">ADMIN</h2>
-    <button onclick="closeAdmin()" class="bg-zinc-800 w-10 h-10 rounded-full">✕</button>
-  </div>
-  
-  <div class="bg-zinc-900 rounded-2xl p-5 mb-4">
-    <h3 class="font-bold mb-3">📸 Rasm Yuklash</h3>
-    <input type="file" id="imgInput" multiple accept="image/*" class="w-full bg-black border border-zinc-800 rounded-xl p-3 text-sm mb-3">
-    <button onclick="uploadImages()" class="w-full bg-white text-black py-3 rounded-xl font-bold">Qo'shish</button>
-  </div>
-
-  <div class="bg-zinc-900 rounded-2xl p-5 mb-4">
-    <h3 class="font-bold mb-3">🎵 Musiqa Yuklash</h3>
-    <input type="file" id="musicInput" multiple accept="audio/*" class="w-full bg-black border border-zinc-800 rounded-xl p-3 text-sm mb-3">
-    <button onclick="uploadMusic()" class="w-full bg-green-500 text-black py-3 rounded-xl font-bold">Musiqa Qo'shish</button>
-  </div>
-
-  <button onclick="clearAll()" class="w-full bg-red-600 py-3 rounded-xl">Hammasini o'chirish</button>
-</div>
-
-<script>
-const PASS="nt3";
-let imgs=JSON.parse(localStorage.getItem('nt3_images')||'[]');
-let musics=JSON.parse(localStorage.getItem('nt3_musics')||'[]');
-
-function render(){
-  const g=document.getElementById('grid');
-  const e=document.getElementById('empty');
-  g.innerHTML='';
-  if(imgs.length==0){e.style.display='block';return;}
-  e.style.display='none';
-  imgs.forEach((src,i)=>{
-    g.innerHTML+=`<div class="pin"><img src="${src}"><button onclick="del(${i})" class="absolute top-2 right-2 bg-black/70 px-2 rounded">x</button></div>`;
-  });
-}
-function openAdmin(){
-  if(prompt("Parol:")!=PASS){alert("Parol: nt3");return;}
-  document.getElementById('adminPanel').classList.remove('hidden');
-}
-function closeAdmin(){document.getElementById('adminPanel').classList.add('hidden');}
-function uploadImages(){
-  const f=document.getElementById('imgInput').files;
-  Array.from(f).forEach(file=>{
-    const r=new FileReader();
-    r.onload=e=>{imgs.unshift(e.target.result);localStorage.setItem('nt3_images',JSON.stringify(imgs));render();};
-    r.readAsDataURL(file);
-  });
-  alert("Qo'shildi!");
-}
-function uploadMusic(){
-  const f=document.getElementById('musicInput').files;
-  Array.from(f).forEach(file=>{
-    const r=new FileReader();
-    r.onload=e=>{musics.push({name:file.name,data:[STRIPPED]'nt3_musics',JSON.stringify(musics));document.getElementById('musicBar').classList.remove('hidden');};
-    r.readAsDataURL(file);
-  });
-}
-function del(i){imgs.splice(i,1);localStorage.setItem('nt3_images',JSON.stringify(imgs));render();}
-function clearAll(){imgs=[];localStorage.removeItem('nt3_images');render();}
-function toggleMusic(){
-  const a=document.getElementById('audio');
-  const p=document.getElementById('playBtn');
-  if(!musics[0])return;
-  a.src=musics[0].data;
-  if(a.paused){a.play();p.innerText='⏸';}else{a.pause();p.innerText='▶';}
-}
-render();
-</script>
-</body>
-</html>
+// Music
+audio player
